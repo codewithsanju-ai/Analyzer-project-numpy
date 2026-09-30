@@ -167,17 +167,70 @@ while True:
                     print(res)
                     
         case 3:
+            arr1=n1.get_array()
             print("Choose a Option....")
-            print("Combine Array")
-            print("Split Array")
+            print("1.Combine Array")
+            print("2.Split Array")
             choice5=int(input('Enter the choice...'))
             match choice5:
                 case 1:
-                    
+                   print("combine tha array by (hstack//vstack)")
+                   print("1.hstcak")
+                   print("2.vstack")
+                   choice8=int(input("enyter the choice"))
+                   match choice8:
+                        case 1:
+                            print("re-enter same-size element (element separeted by space):")
+                            arr1=n1.get_array()
+                            if n1.get_array().ndim==1:
+                                arr2=n1.create_1d()
+                            elif n1.get_array().ndim==2:
+                                arr2=n1.create_2d()
+                            else:
+                                arr2=n1.create_3d()
+                            print("combine bt hstack::",np.hstack(arr1,arr2))
+                        case 2:
+                             print("re-enter same-size element (element separeted by space):")
+                             arr1=n1.get_array()
+                             if n1.get_array().ndim==1:
+                                arr2=n1.create_1d()
+                             elif n1.get_array().ndim==2:
+                                arr2=n1.create_2d()
+                             else:
+                                 arr2=n1.create_3d()
+                             print("combine bt vstack::",np.vstack(arr1,arr2))
                     
                 case 2:
-                    print("")
+                    print("split tha array by (hsplit//vsplit)")
+                    print("1.hsplit")
+                    print("2.vsplit")
+                    choice8=int(input("enter the choice"))
+                    match choice8:
+                        case 1:
+                         print("re-enter same-size element (element separeted by space):")
+                         arr1=n1.get_array()
+                         if n1.get_array().ndim==1:
+                            arr2=n1.create_1d()
+                         elif n1.get_array().ndim==2:
+                            arr2=n1.create_2d()
+                         else:
+                            arr2=n1.create_3d()
+                         print("split bt hsplit::",np.hsplit(arr1,arr2))
+                         
+                        case 2:
+                             print("re-enter same-size element (element separeted by space):")
+                             arr1=n1.get_array()
+                             if n1.get_array().ndim==1:
+                              arr2=n1.create_1d()
+                             elif n1.get_array().ndim==2:
+                              arr2=n1.create_2d()
+                             else:
+                                arr2=n1.create_3d()
+                             print("split by vsplit::",np.vsplit(arr1,arr2))
+                 
+                           
         case 4:
+            arr1=n1.get_array()
             print("Choose a Option....")
             print("1.Search a value ")
             print("2.Sort the array")
@@ -185,11 +238,37 @@ while True:
             choice6=int(input("Enter the choice.... "))
             match choice6:
                 case 1:
-                    print("")
+                    
+                    search_value=int(input("enter the number for serach"))
+                    print(arr1.where(search_value))
                 case 2:
-                    print("")
+                    print("sort the value in ascending and decending order")
+                    print("1.Acending")
+                    print("2.Decending")
+                    choice9=int(input("enter the choice"))
+                    match choice9:
+                        case 1:
+                            arr1.sort()
+                        case 2:
+                            arr1.sort()[::-1]
+                            
                 case 3:
-                    print("")
+                    
+                    print("Filter options")
+                    print("1. Even numbers")
+                    print("2. Odd numbers")
+                    
+
+                    choice10 = int(input("Enter the choice: "))
+
+                    match choice10:
+                     case 1:
+                      print(arr1[arr1 % 2 == 0])
+
+                     case 2:
+                      print(arr1[arr1 % 2 != 0])
+
+                     
         case 5:
             print("Choose a aggregate/statistics Option....")
             print("1.Sum")
