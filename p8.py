@@ -357,6 +357,8 @@ while True:
             print("3.Median")
             print("4.strandard Deviation")
             print("5.Variance")
+            print("6.min")
+            print("7.max")
             choice7=int(input("Enter the choice.... "))
             match choice7:
                 case 1:
@@ -396,10 +398,14 @@ while True:
                     print("Maximum:", np.max(arr1))
                     print("------------------------------")
         case 6:
-            print("thank you for using this ")
+            print("------------------------------")
+            print("Thank you for using this numpy anaylzer project ")
+            print("------------------------------")
             break
         case _:
+            print("------------------------------")
             print("invalid input please re-enter ...")
+            print("------------------------------")
 
             
 
