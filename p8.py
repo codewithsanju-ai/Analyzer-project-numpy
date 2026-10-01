@@ -1,7 +1,7 @@
 import numpy as np
 class DataAnalytics():
-    def __init__(self,number=None):
-        self.__number=number
+    def __init__(self):
+        self.__number=np.array([])
     def get_array(self):
         return self.__number
 
