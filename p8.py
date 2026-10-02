@@ -142,6 +142,8 @@ while True:
              print("2.Substration")
              print("3.Multiplication")
              print("4.Division")
+             print("5.DOT product")
+             print("6.matrix multiplication")
              print("5.Go Back")
              choice4=int(input("Enter the choice..."))
              match choice4:
@@ -204,6 +206,33 @@ while True:
                     print("------------------------------")
                     print("result of divison",res)
                     print("------------------------------")
+                case 5:
+                    print("re-enter same-size element (element separeted by space):")
+                    arr1=n1.get_array()
+                    if n1.get_array().ndim==1:
+                        arr2=n1.create_1d()
+                    elif n1.get_array().ndim==2:
+                        arr2=n1.create_2d()
+                    else:
+                        arr2=n1.create_3d()
+                    res=np.dot(arr1,arr2)
+                    print("------------------------------")
+                    print("result of divison",res)
+                    print("------------------------------")
+                case 6:
+                    print("re-enter same-size element (element separeted by space):")
+                    arr1=n1.get_array()
+                    if n1.get_array().ndim==1:
+                        arr2=n1.create_1d()
+                    elif n1.get_array().ndim==2:
+                        arr2=n1.create_2d()
+                    else:
+                        arr2=n1.create_3d()
+                    res=np.matmul(arr1,arr2)
+                    print("------------------------------")
+                    print("result of divison",res)
+                    print("------------------------------")
+                    
                     
                 case 5:
                     break
@@ -359,6 +388,9 @@ while True:
             print("5.Variance")
             print("6.min")
             print("7.max")
+            print("8.percentiles")
+            print("9.Coeffient of Variation")
+            print("10.Correlation of two array")
             choice7=int(input("Enter the choice.... "))
             match choice7:
                 case 1:
@@ -396,6 +428,37 @@ while True:
                     arr1 = n1.get_array()
                     print("------------------------------")
                     print("Maximum:", np.max(arr1))
+                    print("------------------------------")
+                case 8:
+                    arr1 = n1.get_array()
+                    
+                    print("------------------------------")
+                    print("25th percentile::",np.percentile(arr1,25))
+                    print("50th percentile::",np.percentile(arr1,50))
+                    print("75th percentile::",np.percentile(arr1,75))
+                    
+                    print("------------------------------")
+                case 9:
+                    arr1 = n1.get_array()
+                    mean=np.mean(arr1)
+                    std=np.std(arr1)
+                    res=(std/mean)*100
+                    print("------------------------------")
+                    print("Coeffient of Variation::",res)
+                    print("------------------------------")
+                case 10:
+                    
+                    print("re-enter same-size element (element separeted by space):")
+                    arr1=n1.get_array()
+                    if n1.get_array().ndim==1:
+                        arr2=n1.create_1d()
+                    elif n1.get_array().ndim==2:
+                        arr2=n1.create_2d()
+                    else:
+                        arr2=n1.create_3d()
+                    res=np.corrcoef(arr1,arr2)
+                    print("------------------------------")
+                    print("Correlation of two array:", res,"%")
                     print("------------------------------")
         case 6:
             print("------------------------------")
